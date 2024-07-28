@@ -3,7 +3,7 @@ import { Navigate } from 'react-router-dom';
 
 const withAuth = (Component, isProtected) => {
   const WithAuthComponent = (props) => {
-    const accessToken = "lTEsKBVKvmo35lmA0fJtQx9X4pzPOpPg4X6VqWNF"
+    const accessToken = localStorage.getItem('accessToken');
 
     if (isProtected) {
       if (!accessToken) {
