@@ -1,0 +1,243 @@
+.swipeable-card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  perspective: 1000px;
+  position: relative; /* This ensures proper positioning context */
+}
+
+.nav-button.left {
+  position: absolute; /* Positioning the arrow absolutely */
+  left: 0; /* Align to the left edge */
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%); /* Adjust for exact center alignment */
+  z-index: 10; /* Ensure it's above other content */
+}
+
+.nav-button.right {
+  position: absolute; /* Same positioning technique for right arrow */
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+/* Ensure that padding or margin of the card does not overlap or obstruct the arrows */
+.swipeable-card {
+  width: calc(100% - 40px); /* Adjust width to prevent overlap with arrows */
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+}
+
+.swipeable-card:last-child {
+  animation: rise 0.2s ease-out forwards;
+  margin-bottom: 0px; /* Normal spacing for last card */
+}
+
+.swipeable-card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-23px) translateZ(50px); /* Lift and project forward */
+}
+
+@keyframes rise {
+  0% {
+    transform: scale(1) translateZ(0px);
+  }
+  50% {
+    transform: scale(1.05) translateZ(50px);
+  }
+  100% {
+    transform: scale(1) translateZ(0px);
+  }
+}
+
+
+.swipeable-card.accepted {
+  border: 2px solid #28a745;
+}
+
+.swipeable-card.rejected {
+  border: 2px solid #dc3545;
+}
+
+.swipeable-card.blocked {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.card-header h3 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.status-indicator {
+  font-size: 10px;
+  padding: 3px 6px;
+  border-radius: 15px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.status-indicator.accepted {
+  background-color: #28a745;
+  color: white;
+}
+
+.status-indicator.rejected {
+  background-color: #dc3545;
+  color: white;
+}
+
+.status-indicator.existing {
+  background-color: #ffc107;
+  color: #333;
+}
+
+.card-body {
+  margin-top: 8px;
+  width: 100%;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+.transaction-date, .transaction-remark {
+  margin: 4px 0;
+  color: #666;
+  font-size: 12px;
+}
+
+.card-body input, 
+.card-body select, 
+.card-body .react-select__control {
+  width: 100%;
+  max-width: 100%; /* Ensures the width doesn't exceed the parent width */
+  margin: 8px 0;
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: #f8f9fa;
+  transition: all 0.3s ease;
+  box-sizing: border-box; /* Ensures padding and border are included in the width */
+}
+
+.card-body input:focus, .card-body select:focus, .card-body .react-select__control:hover {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.card-actions {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 15px;
+  width: 100%;
+}
+
+.action-button {
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.action-button.accept {
+  background-color: #28a745;
+  color: white;
+}
+
+.action-button.reject {
+  background-color: #dc3545;
+  color: white;
+}
+
+.action-button:hover {
+  transform: scale(1.05);
+}
+
+.nav-button {
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #007bff;
+  transition: color 0.3s;
+  padding: 8px;
+}
+
+.nav-button:hover {
+  color: #0056b3;
+}
+
+/* Media Queries */
+@media (min-width: 480px) {
+  .swipeable-card {
+    max-width: 90%;
+  }
+}
+
+@media (min-width: 768px) {
+  .swipeable-card {
+    max-width: 500px;
+  }
+  
+  .card-header h3 {
+    font-size: 28px;
+  }
+  
+  .status-indicator {
+    font-size: 12px;
+  }
+  
+  .transaction-date, .transaction-remark {
+    font-size: 14px;
+  }
+  
+  .action-button {
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+  }
+  
+  .nav-button {
+    font-size: 32px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .swipeable-card {
+    max-width: 600px;
+  }
+  
+  .card-header h3 {
+    font-size: 32px;
+  }
+}
+

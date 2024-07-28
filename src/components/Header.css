@@ -1,0 +1,36 @@
+/* Header.css */
+
+.global-header {
+    background-color: #2c3e50; /* Deep, sophisticated blue */
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center; /* Center aligns the navigation link */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-home-link {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+
+    /* Adjust the padding as needed for larger clickable area */
+    padding: 5px 10px; 
+}
+
+.header-home-link:hover {
+    color: #74ebd5; /* Slightly lighter shade for hover effect */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .global-header {
+        padding: 10px; /* Slightly reduce padding for smaller screens */
+    }
+
+    .header-home-link {
+        font-size: 1rem; /* Adjust font size for smaller screens */
+    }
+}
