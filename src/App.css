@@ -1,0 +1,60 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #FFFFFF;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.ApiUrl-input {
+  font-size: 1.2em;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+.Login-button {
+  background-color: #000;
+  border: none;
+  color: #FFF;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1em;
+  margin: 10px;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+.Login-button:hover {
+  background-color: #45a049;
+}
+
+.Logout-button {
+  background-color: #f44336;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.5em;
+  margin: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.Logout-button:hover {
+  background-color: #e53935;
+}
+
+

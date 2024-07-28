@@ -1,0 +1,220 @@
+/* Existing styles for the container, form, and elements */
+.single-transaction-upload-container {
+    max-width: 600px;
+    margin: 3rem auto;
+    padding: 2rem;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+    border:1px solid #c7c7c7;
+}
+
+.single-transaction-upload-heading {
+    text-align: start;
+    color: #333333;
+    font-size: 5rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 100%;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1.1rem;
+    color: #555555;
+    margin-bottom: 0;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group select,
+.form-group .select__control {
+    width: 100%;
+    padding: 10px 5px;
+    border-radius: 4px;
+    border: 1px solid #cccccc;
+    font-size: 1rem;
+}
+
+.form-group .select__control {
+    cursor: pointer;
+}
+
+.form-group .select__option {
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.form-group .select__menu {
+   
+    border-radius: 0 0 4px 4px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.form-group-inline {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.form-group-inline input{
+    height: 16px;
+    width: 16px;
+}
+
+.form-group-inline label {
+    margin-right: 0.5rem;
+    margin-bottom: 0;
+    font-size: 1rem;
+    color: #555555;
+}
+
+.form-submit{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.submit1 {
+    background-color: #4a69bd;
+    width: 30%; /* Deep blue */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+   
+
+}
+
+.reset {
+    background-color: white;
+    color: #d9473d ;
+    width: 30%;
+    border: 1px solid #d9473d;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-right: 5%;
+}
+
+.form-submit button:hover {
+    background-color: #3b5283;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .single-transaction-upload-container {
+        padding: 1rem;
+        margin: 1rem;
+    }
+    .single-transaction-upload-heading {
+        font-size: 1.5rem;
+    }
+}
+
+/* Styles for the full-page success message overlay */
+.full-page-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #28a745; /* Green background */
+    color: white;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 2rem;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+
+@keyframes fadeInOut {
+    0%, 100% { opacity: 0; }
+    10%, 90% { opacity: 1; }
+}
+.response-message {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.5s ease-out;
+    visibility: hidden;
+}
+
+.response-message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.response-message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Animation for showing the response message */
+.response-message.show {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+}
+
+
+
+.transaction-details {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background-color: #f7f7f7;
+    border: 1px solid #d3d3d3;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.transaction-details h2 {
+    color: #2c3e50;
+    margin-bottom: 0.8rem;
+}
+
+.transaction-details p {
+    color: #34495e;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0.5rem 0;
+}
+
+.box {
+    width: 100%; /* w-full */
+    padding-left: 1rem; /* px-4 */
+    padding-right: 1rem; /* px-4 */
+    padding-top: 0.5rem; /* py-2 */
+    padding-bottom: 0.5rem; /* py-2 */
+    border: 1px solid #D1D5DB; /* border border-gray-300 */
+    border-radius: 0.375rem; /* rounded-md */
+    box-sizing: border-box; /* box-border */
+  }
+  
+  .box:focus {
+    outline: none; /* focus:outline-none */
+    box-shadow: 0 0 0 2px #A5B4FC; /* focus:ring-2 focus:ring-indigo-400 */
+  }

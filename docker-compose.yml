@@ -1,0 +1,14 @@
+version: '3.8'  # Use a version compatible with your Docker Engine version
+
+services:
+  app:
+    image: splitwise-portal
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    environment:
+      - NODE_ENV=development
+    command: npm start

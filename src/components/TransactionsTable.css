@@ -1,0 +1,167 @@
+.transactions-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 10px;
+  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+}
+
+.transaction-card {
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 400px;
+  transition: width 0.3s;
+}
+
+.transaction-card .card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.transaction-card .card-body {
+  margin-top: 10px;
+}
+
+.transaction-card .card-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.transaction-card .card-actions button {
+  width: 48%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 16px;
+}
+
+.transaction-card .card-actions .accept-button {
+  background-color: #28a745;
+  color: white;
+}
+
+.transaction-card .card-actions .reject-button {
+  background-color: #dc3545;
+  color: white;
+}
+
+.transaction-card .card-actions .accept-button:hover {
+  background-color: #218838;
+}
+
+.transaction-card .card-actions .reject-button:hover {
+  background-color: #c82333;
+}
+
+.blocked-row {
+  background-color: #f5f5f5;
+  pointer-events: none;
+}
+
+.submit-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 90%;
+  max-width: 400px;
+}
+
+.submit-button:disabled {
+  background-color: #6c757d;
+}
+
+.submit-button:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+.card-body p {
+  margin: 5px 0;
+  color: #666;
+  font-size: 14px;
+}
+
+.card-body input,
+.card-body select {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.card-body select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>') no-repeat right 10px center;
+  background-size: 12px;
+}
+
+.nav-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
+  transition: color 0.3s;
+  padding: 10px;
+}
+
+.nav-button:hover {
+  color: #000;
+}
+
+.nav-button.left {
+  margin-right: 10px;
+}
+
+.nav-button.right {
+  margin-left: 10px;
+}
+
+/* Media queries for responsiveness */
+@media (min-width: 768px) {
+  .transaction-card {
+    width: 80%;
+    max-width: 500px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .transactions-list {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .transaction-card {
+    width: 60%;
+    max-width: 600px;
+  }
+
+  .submit-button {
+    width: 60%;
+    max-width: 600px;
+  }
+}
