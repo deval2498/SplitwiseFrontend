@@ -119,7 +119,7 @@ const SingleTransactionUpload = () => {
       <Header />
       <div className="flex items-center justify-center min-h-screen bg-gray-100">
         <div class="w-full max-w-sm p-6 bg-white border border-gray-300 rounded-lg shadow-md">
-          <form>
+          <form onSubmit={handleSubmit}>
             <h2 class="mb-6 text-2xl font-bold text-center text-gray-700">
               Add Transaction
             </h2>
