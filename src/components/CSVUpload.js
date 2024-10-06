@@ -119,7 +119,7 @@ const CSVUpload = () => {
               type="file"
               id="csv-file-input"
               className="max-w-48 mx-2"
-              accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
+              accept=".csv, application/pdf"
               onChange={handleFileChange}
             />
             <select
